@@ -7,5 +7,6 @@ jobs:
     steps:
       - name: docker pull
         run: |
-          docker pull -a kirasoa/yasc
-          docker pull -a kirasoa/cloudera-altuscli
+          docker pull -a -q kirasoa/yasc
+          docker pull -a -q kirasoa/cloudera-altuscli
+          docker images
