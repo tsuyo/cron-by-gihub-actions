@@ -1,0 +1,10 @@
+name: cron by github actions
+on: push
+jobs:
+  dockerhub:
+    name: docker pull my images
+    runs-on: ubuntu-latest
+    steps:
+      - name: docker pull
+        run: |
+          docker pull kirasoa/yasc:latest
