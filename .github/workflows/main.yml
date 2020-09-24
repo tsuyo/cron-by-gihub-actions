@@ -1,12 +1,24 @@
 name: cron by github actions
-on: push
+
+on:
+  push:
+  schedule:
+    # At 19:00 (UTC) / At 4:00 (JST)
+    - cron: '0 19 * * *'
+
 jobs:
   dockerhub:
-    name: docker pull my images
+    name: pull all of my images on Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: docker pull
         run: |
           docker pull -a -q kirasoa/yasc
           docker pull -a -q kirasoa/cloudera-altuscli
+          docker pull -a -q kirasoa/myhello
+          docker pull -a -q kirasoa/apache-hadoop-pseudo
+          docker pull -a -q kirasoa/apache-hadoop-standalone
+          docker pull -a -q kirasoa/apache-hbase-pseudo
+          docker pull -a -q kirasoa/apache-hadoop-pseudo-yarn
+          docker pull -a -q kirasoa/cloudera-director
           docker images
