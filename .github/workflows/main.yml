@@ -21,4 +21,5 @@ jobs:
           docker pull -a -q kirasoa/apache-hbase-pseudo
           docker pull -a -q kirasoa/apache-hadoop-pseudo-yarn
           docker pull -a -q kirasoa/cloudera-director
+          docker pull -a -q pipelines-u18graalvm
           docker images
